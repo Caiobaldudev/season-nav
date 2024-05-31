@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+:root {
+  -webkit-font-smoothing: antialiased;
+  font-size: 62.5%;
+  --font-primary: "Merriweather Sans", sans-serif;
+  --font-secondary: "Kaushan Script", cursive;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+body {
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fefefe;
+  background: url(./imgs/verão-bg.png) no-repeat center center / cover;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 200px 500px minmax(200px,1fr);
+  grid-template-areas: 
+  'header header header'
+  'side content imgs'
+  'footer footer footer'
+  ;
+}
+
+.logo {
+  grid-area: header;
+  padding: 3.6rem 10rem;
+}
+
+h1 {
+  color: #fefefe;
+  font-family: var(--font-secondary);
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 3rem;
+  text-shadow:  3px 3px 5px rgba(0, 0, 0, 0.5), /* sombra com deslocamento */
+  -0.5px -0.5px 0 black,
+  0.5px -0.5px 0 black,
+  -0.5px 0.5px 0 black,
+  0.5px 0.5px 0 black;
+}
+
+.grid-section {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 14rem;
+  align-items: center;
+}
+
+.seasons-list{
+  width: 30rem;
+  grid-column: 1;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+}
+
+.seasons-list img{
+  width: 9rem;
+  height: 9rem;
+}
+
+.back-line {
+  grid-column: 1;
+  position: relative;
+  height: 50rem;
+  left: 75%;
+  width: 5px;
+  background-color: rgb(238, 255, 0);
+  border-radius: 5px;
+  z-index: -1; 
+}
+
+.titulo {
+  font-family: var(--font-primary);
+  font-size: 4.8rem;
+  line-height: 1;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.seasons-description {
+  grid-column: 2;
+}
+
+.seasons-description p {
+  font-size: 2rem;
+  width: 40rem;
+  text-align: start;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+ .images {
+  grid-column: 3;
+  width: 100%;
+}
+
+.seasons-imgs ul {
+  display: flex;
+  justify-content: center;
+}
+
+.footer {
+  display: grid;
+  width: 100%;
+  grid-area: footer;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer p{
+  font-size: 1.5rem;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
