@@ -5,7 +5,6 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-
 :root {
   -webkit-font-smoothing: antialiased;
   font-size: 62.5%;
@@ -37,17 +36,17 @@ body {
   background: url(./imgs/verão-bg.png) no-repeat center center / cover;
   display: grid;
   align-items: center;
-  grid-template-columns: 200px 500px minmax(200px,1fr);
-  grid-template-areas: 
-  'header header header'
-  'side content imgs'
-  'footer footer footer'
-  ;
+  grid-template-columns: 200px 500px minmax(200px, 1fr);
+  grid-template-areas:
+    "header header header"
+    "side content imgs"
+    "footer footer footer";
 }
 
 .logo {
   grid-area: header;
   padding: 3.6rem 10rem;
+  animation: showDown 1s forwards;
 }
 
 h1 {
@@ -56,11 +55,8 @@ h1 {
   font-size: 4rem;
   font-weight: 400;
   line-height: 3rem;
-  text-shadow:  3px 3px 5px rgba(0, 0, 0, 0.5), /* sombra com deslocamento */
-  -0.5px -0.5px 0 black,
-  0.5px -0.5px 0 black,
-  -0.5px 0.5px 0 black,
-  0.5px 0.5px 0 black;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5), -0.5px -0.5px 0 black,
+    0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;
 }
 
 .grid-section {
@@ -70,7 +66,7 @@ h1 {
   align-items: center;
 }
 
-.seasons-list{
+.seasons-list {
   width: 30rem;
   grid-column: 1;
   position: absolute;
@@ -78,11 +74,21 @@ h1 {
   flex-direction: column;
   gap: 3rem;
   align-items: center;
+  animation: showDown 1s forwards;
 }
 
-.seasons-list img{
+.seasons-list img {
+  filter: brightness(0.8);
   width: 9rem;
   height: 9rem;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.seasons-list img:hover {
+  filter: brightness(1.1);
+  transform: scale(1.1);
+  transition: 0.5s;
 }
 
 .back-line {
@@ -93,7 +99,8 @@ h1 {
   width: 5px;
   background-color: rgb(238, 255, 0);
   border-radius: 5px;
-  z-index: -1; 
+  z-index: -1;
+  animation: showDown 1s forwards;
 }
 
 .titulo {
@@ -116,7 +123,24 @@ h1 {
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
- .images {
+.js-tabcontent section {
+  display: none;
+}
+
+.js-tabcontent section.ativo {
+  display: block !important;
+  animation: show 0.5s forwards;
+}
+
+.js-tabimages section {
+  display: none;
+}
+
+.js-tabimages section.ativo {
+  display: block !important;
+}
+
+.seasons-imgs {
   grid-column: 3;
   width: 100%;
 }
@@ -124,6 +148,15 @@ h1 {
 .seasons-imgs ul {
   display: flex;
   justify-content: center;
+}
+
+.seasons-imgs li:nth-child(1) {
+  animation: show 1s forwards;
+}
+
+.seasons-imgs li:nth-child(2) {
+  opacity: 0;
+  animation: showDown 1.5s forwards 0.5s;
 }
 
 .footer {
@@ -134,7 +167,30 @@ h1 {
   justify-content: center;
 }
 
-.footer p{
+.footer p {
   font-size: 1.5rem;
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* animations */
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0px, 0, 0);
+  }
+}
+
+@keyframes showDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0px, 0, 0);
+  }
 }
