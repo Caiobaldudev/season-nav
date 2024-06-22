@@ -28,7 +28,7 @@ O estilo da página utiliza:
 - Layout de grid para posicionar os elementos principais.
 - Transições e animações CSS para uma experiência de navegação suave.
 - Propriedades de background para ajustar dinamicamente o fundo da página conforme a estação selecionada.
-- [Página mobile em andamento]
+- Responsividade Mobile.
 
 ### JavaScript
 
@@ -47,8 +47,8 @@ A funcionalidade interativa é gerenciada por JavaScript:
    ```bash
    cd seasons
 
-3. **Abra o arquivo index.html em um navegador para ver o projeto em ação**.</br>
-(Ou veja pelo link disponibilizado quando for ao ar)
+3. **ou Abra o arquivo index.html em um navegador para visualizar o projeto**.</br>
+(você também consegue vê-lo pelo link do deploy feito na vercel à direita, abaixo da descrição do projeto -> )
 
 ## Autor
 <a href="https://github.com/Caiobaldudev">
