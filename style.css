@@ -41,7 +41,7 @@ body {
     "header header header"
     "side content imgs"
     "footer footer footer";
-    transition: background 0.5s ease-in-out;
+  transition: background 0.5s ease-in-out;
 }
 
 .logo {
@@ -121,7 +121,7 @@ h1 {
   font-size: 2rem;
   width: 40rem;
   text-align: start;
-  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 .js-tabcontent section {
@@ -193,5 +193,77 @@ h1 {
   to {
     opacity: 1;
     transform: translate3d(0px, 0, 0);
+  }
+}
+
+@media (max-width: 700px) {
+  body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "nav"
+      "imgs"
+      "footer";
+  }
+
+  .logo {
+    grid-area: header;
+    padding: 1rem 4rem;
+  }
+
+  .logo h1 {
+    font-size: 2rem;
+  }
+
+  .seasons-list {
+    grid-area: nav;
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  .seasons-list img {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .back-line {
+    grid-area: nav;
+    width: 35rem;
+    height: 5px;
+    position: relative;
+    left: 0;
+    margin-top: 2.9rem;
+  }
+
+  .grid-section {
+    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    gap: 9rem;
+  }
+
+  .titulo {
+    grid-area: content;
+    font-size: 2.4rem;
+  }
+
+  .seasons-description {
+    grid-area: content2;
+  }
+
+  .seasons-description p {
+    font-size: 1.6rem;
+  }
+  .seasons-imgs {
+    grid-area: imgs;
+  }
+
+  .seasons-imgs img {
+    width: 20rem;
+  }
+  .footer p {
+    font-size: 1rem;
+    grid-area: footer;
   }
 }
